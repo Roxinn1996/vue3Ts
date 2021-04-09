@@ -1,27 +1,84 @@
-# Vue 3 + Typescript + Vite
+# 基于Vue 3 + Typescript + Vite 搭建H5通用架子
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+### 项目初衷
 
-## Recommended IDE Setup
+开发一个H5的通用架子，让前端同学开箱即用，迅速投入战斗。
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+----
 
-### If Using `<script setup>`
+项目源码在文章结尾处，记得查收哦~**
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+### 主要功能
+1. 常用目录别名
+2. Vant/Rem适配
+3. scss支持、_mixin.scss、_variables.scss
+4. 页面切换动画+keepAlive
+5. 页面标题
+6. 自动注册：自动注册路由表/自动注册Vuex/svg图标引入
+7. axios封装、api管理
+8. 生产环境优化
 
-## Type Support For `.vue` Imports in TS
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
+### 常用目录别名
+```js
 
-### If Using Volar
+alias: {
+        '@': '/src',
+        'assets': '/src/assets',
+        'components': '/src/components',
+        'config': '/src/config',
+        'router': '/src/router',
+        'api': '/src/api',
+    }
+```
 
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
+### Vant/Rem适配
 
-### If Using Vetur
+```js
+module.exports = {
+  "plugins": {
+    "postcss-pxtorem": {
+      rootValue: 37.5, // Vant 官方根字体大小是 37.5
+      propList: ['*'],
+      selectorBlackList: ['.norem'] // 过滤掉.norem-开头的class，不进行rem转换
+    }
+  }
+}
+```
 
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+### less支持、variables.less、common.less
+选择less作为css预处理，并对 variables、common.less作全局引入。
+```js
+css: {
+    preprocessorOptions: {
+      // 引入公用的样式
+      less: {
+        additionalData: `@import "@/styles/common.less";@import "@/styles/variable.less";`,
+      }
+    }
+  }
+```
+
+### 自动注册
+
+使用vite import.meta.globEager 方法获取文件上下文
+下面用路由自动注册为例
+
+```js
+//模块化路由，将router 文件夹下的ts文件内路由自动导入
+const routesModules = import.meta.globEager('./**/*.ts')
+const modules:Array<RouteRecordRaw> = []
+Object.keys(routesModules).forEach(key => {
+  modules.push(...routesModules[key].default)
+})
+routes = routes.concat(modules)
+
+const router = createRouter({
+    history: createWebHashHistory(),
+    routes
+});
+
+```
+
+
+

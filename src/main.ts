@@ -7,7 +7,7 @@ import Directives from './directives'
 
 import 'lib-flexible'
 import 'vant/lib/index.css';
-import '@/styles/common.less'
+// import '@/styles/common.less'
 import '@/config/config'
 
 createApp(App)
