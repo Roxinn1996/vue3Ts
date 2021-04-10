@@ -1,11 +1,20 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv} from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vitePluginImp from "vite-plugin-imp";
+import viteCompression from 'vite-plugin-compression'
+// import vitePluginImp from "vite-plugin-imp";
 
+// console.log(loadEnv())
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    viteCompression({
+      verbose: true,
+      disable: false,
+      threshold: 10240,
+      algorithm: 'gzip',
+      ext: '.gz'
+    }),
     // vitePluginImp({   //使用 vant 组件的再加载css文件
     //   libList:[
     //     {
@@ -35,6 +44,13 @@ export default defineConfig({
         'config': '/src/config',
         'router': '/src/router',
         'api': '/src/api',
+    }
+  },
+  build:{
+    terserOptions:{
+      compress: {
+        drop_console: true,
+      }
     }
   },
   css: {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>首页-1</title>
+    <g id="普通" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="画板" transform="translate(-60.000000, -206.000000)" stroke="#9C9C9C">
+            <g id="首页-1" transform="translate(59.000000, 205.000000)">
+                <g id="编组" transform="translate(2.000000, 2.000000)">
+                    <path d="M4.0106,10.9999 L4.0106,20.0389 C4.0106,20.9429 4.7436,21.6759 5.6476,21.6759 L8.6866,21.6759 L8.6866,16.9789 C8.6866,16.3499 9.1976,15.8399 9.8266,15.8399 L12.1736,15.8399 C12.8026,15.8399 13.3136,16.3499 13.3136,16.9789 L13.3136,21.6759 L16.3526,21.6759 C17.2566,21.6759 17.9896,20.9429 17.9896,20.0389 L17.9896,10.9999" id="Stroke-1" stroke-width="2"></path>
+                    <polyline id="Stroke-3" stroke-width="2" points="-0.0001 10.9999 10.9999 -0.0001 21.9999 10.9999"></polyline>
+                    <line x1="12.6371" y1="9.6694" x2="9.5341" y2="9.6694" id="Stroke-5" stroke-width="2"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

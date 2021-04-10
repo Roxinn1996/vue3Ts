@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>首页-2</title>
+    <g id="普通" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-60.000000, -168.000000)">
+            <g id="首页-2" transform="translate(59.000000, 167.000000)">
+                <g id="编组" transform="translate(2.000000, 2.000000)">
+                    <path d="M11.0002,-0.0001 L0.0002,10.9999 L4.0102,10.9999 L4.0102,20.0389 C4.0102,20.9429 4.7432,21.6759 5.6472,21.6759 L8.6872,21.6759 L8.6872,16.9789 C8.6872,16.3499 9.1972,15.8399 9.8262,15.8399 L12.1732,15.8399 C12.8032,15.8399 13.3132,16.3499 13.3132,16.9789 L13.3132,21.6759 L16.3522,21.6759 C17.2562,21.6759 17.9892,20.9429 17.9892,20.0389 L17.9892,10.9999 L22.0002,10.9999 L11.0002,-0.0001 Z" id="Fill-1" fill="#FA5B3C" opacity="0.400000006"></path>
+                    <path d="M4.0105,10.9999 L4.0105,20.0389 C4.0105,20.9429 4.7435,21.6759 5.6475,21.6759 L8.6865,21.6759 L8.6865,16.9789 C8.6865,16.3499 9.1975,15.8399 9.8265,15.8399 L12.1735,15.8399 C12.8025,15.8399 13.3135,16.3499 13.3135,16.9789 L13.3135,21.6759 L16.3525,21.6759 C17.2565,21.6759 17.9895,20.9429 17.9895,20.0389 L17.9895,10.9999" id="Stroke-3" stroke="#FA5B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <polyline id="Stroke-5" stroke="#FA5B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0.0002 10.9999 11.0002 -0.0001 22.0002 10.9999"></polyline>
+                    <line x1="12.6369" y1="9.6694" x2="9.5339" y2="9.6694" id="Stroke-7" stroke="#FA5B3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

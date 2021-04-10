@@ -1,36 +1,61 @@
 <template>
-  <keep-alive>
-    <router-view  v-if="keepAlive" />
-  </keep-alive>
-  <router-view v-if="!keepAlive" />
+  <NavBar v-show="getSetting.is_show_header"/>
+  <RouterView>
+    <template #default="{ Component, route }">
+      <keep-alive v-if="getSetting.keepAlive">
+        <component :is="Component" :key="route.fullPath" />
+      </keep-alive>
+      <component v-else :is="Component" :key="route.fullPath" />
+    </template>
+  </RouterView>
+  <FooterTabbar v-show="getSetting.is_show_footer"/>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+/* 组件 */
+import FooterTabbar from './components/FooterTabbar.vue'
+import NavBar from './components/NavBar.vue'
+/* 工具 */
+import { defineComponent, onMounted } from 'vue';
+import { useRouter } from 'vue-router'
+import { createNamespacedHelpers, useStore } from 'vuex'
+const { mapGetters, mapMutations } = createNamespacedHelpers('setting')
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
-  },
-  data(){
-    return{
-      keepAlive: true
-    }
-  },
+  components: {  FooterTabbar, NavBar },
+  setup(){
+    const router = useRouter();
+    const store = useStore();
+    
+    onMounted(() => {
+      init();
+    });
+    
+    const init = () =>{
+      router.beforeEach((to, from, next) => {
+        const { keepAlive= false, is_show_header= false, is_show_footer= false, title='' } = to.meta
+        store.commit('setting/set_router_meta',
+        { 
+          keepAlive,
+          is_show_header,
+          is_show_footer,
+          title,
+        })
+        to.meta.title?( document.title = to.meta.title ):( document.title = '通用架子' ) 
+        next()
+      })
+    };
 
-  methods:{
-    init(){
-      console.log(this.$router);
-       this.$router.options.routes.map((item) =>{
-         if (item.path == window.location.pathname){
-           this.keepAlive = item.meta.keepAlive || false;
-         }
-       })
+    return{
+      init
     }
+  },
+  computed:{
+    ...mapGetters(['getSetting'])
   }
-})
+  
+});
 </script>
 
 <style>

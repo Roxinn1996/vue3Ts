@@ -2,17 +2,19 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import Vant from 'vant';
+import 'vant/lib/index.css';
+import 'lib-flexible'
 import store  from './store';
 import Directives from './directives'
+import Vconsole from 'vconsole'
+import { settings } from '@/config/config'
 
-import 'lib-flexible'
-import 'vant/lib/index.css';
-// import '@/styles/common.less'
-import '@/config/config'
-
+if (import.meta.env.DEV && settings.vconsole) {
+  const vConsole = new Vconsole()
+}
 createApp(App)
-  .use(router)
+  .use(Vant)
   .use(Directives)
   .use(store)
-  .use(Vant)
+  .use(router)
   .mount('#app')

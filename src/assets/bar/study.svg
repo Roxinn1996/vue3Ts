@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="19px" viewBox="0 0 23 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>学习-1</title>
+    <g id="普通" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="画板" transform="translate(-99.000000, -209.000000)" stroke="#9C9C9C">
+            <g id="学习-1" transform="translate(97.000000, 205.000000)">
+                <g id="编组" transform="translate(3.000000, 5.000000)">
+                    <path d="M10.2323,3.5842 C10.2323,2.2542 10.9693,1.0332 12.1453,0.4132 C12.6613,0.1422 13.2343,0.0002 13.8173,0.0002 L20.4653,0.0002 L20.4653,15.6812 L13.2233,15.6812 C13.0303,15.6812 12.8413,15.7282 12.6713,15.8172 L11.1883,16.5992 C10.5903,16.9142 9.8753,16.9142 9.2763,16.5992 L7.7943,15.8172 C7.6243,15.7282 7.4343,15.6812 7.2423,15.6812 L0.0003,15.6812 L0.0003,0.0002 L6.6483,0.0002 C7.2303,0.0002 7.8043,0.1422 8.3193,0.4132 C9.4963,1.0332 10.2323,2.2542 10.2323,3.5842 L10.2323,12.4802" id="Stroke-1" stroke-width="2"></path>
+                    <path d="M3.6049,6.1467 C3.7909,6.0997 6.8369,6.1467 6.8369,6.1467" id="Stroke-3" stroke-width="2"></path>
+                    <path d="M3.6049,10.6682 C3.7909,10.6212 6.8369,10.6682 6.8369,10.6682" id="Stroke-5" stroke-width="2"></path>
+                    <path d="M13.4071,6.1565 C13.5931,6.1105 16.5811,6.1565 16.5811,6.1565" id="Stroke-7" stroke-width="2"></path>
+                    <path d="M13.4071,10.6789 C13.5931,10.6319 16.5811,10.6789 16.5811,10.6789" id="Stroke-9" stroke-width="2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
