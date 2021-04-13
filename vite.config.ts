@@ -3,17 +3,16 @@ import vue from '@vitejs/plugin-vue'
 import viteCompression from 'vite-plugin-compression'
 // import vitePluginImp from "vite-plugin-imp";
 
-// console.log(loadEnv())
-// https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [
     vue(),
     viteCompression({
       verbose: true,
       disable: false,
       threshold: 10240,
-      algorithm: 'gzip',
-      ext: '.gz'
+      ext: '.br', // .gz
+      algorithm: 'brotliCompress',  //gzip
     }),
     // vitePluginImp({   //使用 vant 组件的再加载css文件
     //   libList:[

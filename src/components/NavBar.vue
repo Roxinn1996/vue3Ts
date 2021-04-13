@@ -1,6 +1,6 @@
 <template>
   <van-nav-bar
-    title="题目"
+    title=""
     left-arrow
     @click-left="onClickLeft"
   />

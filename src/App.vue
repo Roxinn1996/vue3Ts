@@ -42,7 +42,7 @@ export default defineComponent({
           is_show_footer,
           title,
         })
-        to.meta.title?( document.title = to.meta.title ):( document.title = '通用架子' ) 
+        to.meta.title?(document.title = to.meta.title  as string):( document.title = '通用架子' ) 
         next()
       })
     };

@@ -1,10 +1,5 @@
 <template>
-  <div class="home">
-    <router-link to="/my-info">my-info</router-link> |
-    <router-link to="/about">About</router-link>
- 
-    <van-button type="primary" v-copy='`这是我的文明走`'>拷贝按钮</van-button>
-  </div>
+  <van-button type="primary" v-copy='`湿哒哒沙雕`'>拷贝按钮</van-button>
 </template>
 
 <script lang='ts'>
@@ -20,7 +15,6 @@ export default defineComponent({
       
     }
 
-
   },
   computed:{
   }
@@ -30,15 +24,9 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+
 .home{
   background-color: #eee;
-  height: 100vh;
-  .title{
-    color: red;
-    font-size: 14px;
-  }
-  .tips{
-    color: @themeColor;
-  }
+
 }
 </style>

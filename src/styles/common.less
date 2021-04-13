@@ -1,121 +1,33 @@
-html,
-body {
-    /* background: #ffe8ce !important; */
-    height: 100%;
-    width: 100%;
-    font-family: PingFangSC-Medium, PingFang SC;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;
+@charset "UTF-8";   
+/* stylelint-enable */
+/* 重置样式 */
+* {
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
 }
 
-::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-}
-/* 初始化样式 */
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-hr,
-p,
-blockquote,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-pre,
-form,
-fieldset,
-legend,
-button,
-input,
-textarea,
-th,
-td {
-    margin: 0;
-    padding: 0;
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    // margin: 0;
+    // padding: 0;
+    // vertical-align: baseline;
 }
 
-body,
-button,
-input,
-select,
-textarea {
-    font: 12px/1.5tahoma, arial, \5b8b\4f53;
+img {
+    border: 0 none;
+    vertical-align: top;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: 100%;
-}
-
-address,
-cite,
-dfn,
-em,
-var {
+i, em {
     font-style: normal;
 }
 
-code,
-kbd,
-pre,
-samp {
-    font-family: couriernew, courier, monospace;
-}
-
-small {
-    font-size: 12px;
-}
-
-ul,
-ol {
+ol, ul {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-}
-
-
-/* a:hover { text-decoration:underline; }  */
-
-sup {
-    vertical-align: text-top;
-}
-
-sub {
-    vertical-align: text-bottom;
-}
-
-legend {
-    color: #000;
-}
-
-fieldset,
-img {
-    border: 0;
-}
-
-button,
-input,
-select,
-textarea {
+input, select, button, h1, h2, h3, h4, h5, h6 {
     font-size: 100%;
+    font-family: inherit;
 }
 
 table {
@@ -123,210 +35,17 @@ table {
     border-spacing: 0;
 }
 
-
-/*==== 清除浮动 ====*/
-
-.clearfix {
-    zoom: 1;
+a, a:visited {
+    text-decoration: none;
+    color: #333;
 }
 
-.clearfix:before,
-.clearfix:after {
-    display: block;
-    line-height: 0;
-    content: "";
-    clear: both;
-    height: 1px;
-    visibility: hidden;
-}
-
-
-/*==== 常用字体大小定义 ====*/
-
-.fs-6 {
-    font-size: 6px;
-}
-
-.fs-8 {
-    font-size: 8px;
-}
-
-.fs-10 {
-    font-size: 10px;
-}
-
-.fs-11 {
-    font-size: 11px;
-}
-
-.fs-12 {
-    font-size: 12px;
-}
-
-.fs-13 {
-    font-size: 13px;
-}
-
-.fs-14 {
+body {
+    margin: 0 auto;
+    background: #e8e8ed;
     font-size: 14px;
-}
-
-.fs-15 {
-    font-size: 15px;
-}
-
-.fs-16 {
-    font-size: 16px;
-}
-
-.fs-17 {
-    font-size: 17px;
-}
-
-.fs-18 {
-    font-size: 18px;
-}
-
-.fs-20 {
-    font-size: 20px;
-}
-
-.fs-24 {
-    font-size: 24px;
-}
-
-.fs-30 {
-    font-size: 30px;
-}
-
-.fs-40 {
-    font-size: 40px;
-}
-
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
-}
-
-.nowrap {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.txtl {
-    text-align: left;
-}
-
-.txtc {
-    text-align: center;
-}
-
-.txtr {
-    text-align: right;
-}
-
-.veralignmid {
-    vertical-align: middle;
-}
-
-.c-35 {
-    color: #353535 !important;
-}
-
-.c-80 {
-    color: #808080 !important;
-}
-
-.c-c9 {
-    color: #c9c9c9 !important;
-}
-
-.c-333 {
-    color: #333 !important;
-}
-
-.c-666 {
-    color: #666 !important;
-}
-
-.c-999 {
-    color: #999 !important;
-}
-
-.c-aaa {
-    color: #aaa !important;
-}
-
-.c-fff {
-    color: #fff !important;
-}
-
-.c-f63 {
-    color: #ff6633 !important;
-}
-
-.c-7f {
-    color: #7f7f7f !important;
-}
-
-.c-red {
-    color: #e42b1a !important;
-}
-
-.c-blue {
-    color: #27a1e5 !important;
-}
-
-.c-bce2f7 {
-    color: #bce2f7 !important;
-}
-
-.c-8c8e8f {
-    color: #8c8e8f !important;
-}
-
-.c-353535 {
-    color: #353535 !important;
-}
-
-.c-f25a2b {
-    color: #f25a2b !important;
-}
-
-.c-11c4b2 {
-    color: #11c4b2 !important;
-}
-
-.c-bbb {
-    color: #bbb !important;
-}
-
-.c-000 {
-    color: #000 !important;
-}
-
-.c-505050 {
-    color: #505050 !important;
-}
-
-.margin-top10 {
-    margin-top: 10px
-}
-
-.margin-right10 {
-    margin-right: 10px
-}
-
-.fw-500 {
-    font-family: PingFangSC-Medium, PingFang SC;
-    font-weight: 500;
-}
-
-.fw-400 {
-    font-family: PingFangSC-Medium, PingFang SC;
-    font-weight: 400;
+    font-family: -apple-system,Helvetica,sans-serif;
+    line-height: 1.5;
+    color: #666;
+    -webkit-text-size-adjust: 100% !important;
 }
