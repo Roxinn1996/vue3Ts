@@ -56,7 +56,7 @@ export default defineConfig({
     preprocessorOptions: {
       // 引入公用的样式
       less: {
-        additionalData: `@import "@/styles/common.less";@import "@/styles/variable.less";`,
+        additionalData: `@import "@/styles/variable.less";`,
       }
     }
   }

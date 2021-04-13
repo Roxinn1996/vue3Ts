@@ -12,6 +12,16 @@ let routes: AppRouteModule[] = [
       back: 'back',
     }
   },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import('@/page/404.vue'),
+    meta: {
+      title: '404',
+      keepAlive: true
+    }
+  },
+  { path: '/:pathMatch(.*)*', redirect: '/404',}
 ];
 //模块化路由
 const routesModules = import.meta.globEager('./modules/*.ts')
