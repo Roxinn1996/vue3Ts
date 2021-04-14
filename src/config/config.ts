@@ -9,7 +9,7 @@ export const baseUrl = () =>{
 }
 //插件设置
 export const settings =  {
-  vconsole: false,
+  vconsole: false,  //h5控制台
   // fixedHeader: false,
   // needPageTrans: true,
 }

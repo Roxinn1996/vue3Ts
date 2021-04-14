@@ -47,14 +47,14 @@ module.exports = {
 }
 ```
 
-### less支持、variables.less、common.less
-选择less作为css预处理，并对 variables、common.less作全局引入。
+### scss支持、variables.scss、common.scss
+选择scss作为css预处理，并对 variables、common.scss作全局引入。
 ```js
 css: {
     preprocessorOptions: {
       // 引入公用的样式
-      less: {
-        additionalData: `@import "@/styles/common.less";@import "@/styles/variable.less";`,
+      scss: {
+        additionalData: `@import "@/styles/common.scss";@import "@/styles/variable.scss";`,
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div>我的资料</div>
+  <div class="info">我的资料</div>
 </template>
 
 <script lang='ts'>
@@ -15,6 +15,9 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style scoped lang='scss'>
+.info{
+  // @include page_content;
+}
 
 </style>

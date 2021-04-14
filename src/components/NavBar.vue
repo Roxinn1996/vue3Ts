@@ -30,7 +30,7 @@
     },
   });
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .active{
   color: #FA5B3D;
 }

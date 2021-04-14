@@ -55,9 +55,12 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       // 引入公用的样式
-      less: {
-        additionalData: `@import "@/styles/variable.less";`,
-      }
+      scss:{
+        additionalData: `@import "@/styles/mixin.scss";@import "@/styles/variable.scss";`
+      },
+      // less: {
+      //   additionalData: `@import "@/styles/variable.less";`,
+      // }
     }
   }
 })

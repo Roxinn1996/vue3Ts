@@ -1,16 +1,17 @@
 <template>
-  <NavBar v-show="getSetting.is_show_header"/>
-  <RouterView>
-    <template #default="{ Component, route }">
-      <keep-alive v-if="getSetting.keepAlive">
-        <component :is="Component" :key="route.fullPath" />
-      </keep-alive>
-      <component v-else :is="Component" :key="route.fullPath" />
-    </template>
-  </RouterView>
-  <FooterTabbar v-show="getSetting.is_show_footer"/>
+  <div id="root">
+    <NavBar v-show="getSetting.is_show_header"/>
+      <RouterView>
+        <template #default="{ Component, route }">
+          <keep-alive v-if="getSetting.keepAlive">
+            <component :is="Component" :key="route.fullPath"/>
+          </keep-alive>
+          <component v-else :is="Component" :key="route.fullPath"/>
+        </template>
+      </RouterView>
+    <FooterTabbar v-show="getSetting.is_show_footer"/>
+  </div>
 </template>
-
 <script lang="ts">
 /* 组件 */
 import FooterTabbar from './components/FooterTabbar.vue'
@@ -42,7 +43,7 @@ export default defineComponent({
           is_show_footer,
           title,
         })
-        to.meta.title?(document.title = to.meta.title  as string):( document.title = '通用架子' ) 
+         to.meta.title?(document.title = to.meta.title  as string):( document.title = '通用架子' ) 
         next()
       })
     };
@@ -59,7 +60,7 @@ export default defineComponent({
 </script>
 
 <style>
-#app {
+#app{
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

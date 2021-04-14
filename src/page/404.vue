@@ -17,7 +17,7 @@ export default {
   }
 }
 </script>
-<style scoped lang="less">
+<style scoped lang="scss">
   .router_undefined{
     height: 100vh;
     overflow: hidden;

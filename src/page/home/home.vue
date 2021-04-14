@@ -1,5 +1,7 @@
 <template>
-  <van-button type="primary" v-copy='`湿哒哒沙雕`'>拷贝按钮</van-button>
+  <div class="home">
+    <van-button type="primary" v-copy='`湿哒哒沙雕`'>拷贝按钮</van-button>
+  </div>
 </template>
 
 <script lang='ts'>
@@ -23,10 +25,8 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less" scoped>
-
+<style lang="scss" scoped>
 .home{
   background-color: #eee;
-
 }
 </style>

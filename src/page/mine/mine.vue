@@ -1,7 +1,9 @@
 <template>
-  <div>我的</div>
-  <div>时间戳转换{{stampToDateISO(`1618245334.721`)}}</div>
-  <van-button type="primary" @click="demoClick">详细页</van-button>
+  <div class="mine">
+    <div>我的</div>
+    <div>时间戳转换{{stampToDateISO(`1618245334.721`)}}</div>
+    <van-button type="primary" @click="demoClick">详细页</van-button>
+  </div>
 
 </template>
 
@@ -25,6 +27,8 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style scoped lang='scss'>
+.mine{
+}
 
 </style>
