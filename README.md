@@ -62,6 +62,7 @@ css: {
 
 ### 模块化自动注册
 
+vuex, router模块化<br>
 使用vite import.meta.globEager 方法获取文件上下文<br>
 下面用路由自动注册为例
 
@@ -78,8 +79,25 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes
 });
-
 ```
+
+### router的meta设置
+路由`meta`内添加元信息，不设置默认为`false`
+1. `is_show_footer` ：是否显示底部栏
+2. `is_show_footer`： 是否显示顶部导航栏
+3. `keepAlive` ：是否缓存页面
+
+配合`vue-router`的`beforeEach`获取meta信息，不填meta默认为false, 数据保存到veux 内，方便后续业务做更多扩展设置
+
+
+
+### 生产环境优化
+
+上线前，得优化一下资源了，该项目做了如下几步操作
+
+1. 使用br压缩代码，配置文件见 vite.config.ts
+2. 移除掉debugger/console
+3. 丑化html/css/js
 
 
 

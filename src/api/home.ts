@@ -1,9 +1,10 @@
 import request from '@/utils/request'
-// 3231_login success
-export function getInfo(params) {
+
+export function getInfo(params) { // 3231_login success
   return request({
     url: '/Ucenter/Login/info',
     method: 'POST',
-    data: params
+    data: params,
+    // closeLoading: true
   })
 }

@@ -1,5 +1,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import type { AppRouteModule } from './type' 
+import store from '@/store'
+
 let routes: AppRouteModule[] = [
   {
     path: "/",
@@ -35,11 +37,17 @@ const router = createRouter({
     history: createWebHashHistory(),
     routes:(routes as unknown) as RouteRecordRaw[],
 });
-// router.beforeEach(async(to, from, next) => {
-//   // console.log(to)
-//   // console.log(store)
-  
-//   // console.log(from)
-//   next()
-// })
+
+router.beforeEach(async(to, from, next) => {
+  const { keepAlive= false, is_show_header= false, is_show_footer= false, title='' } = to.meta
+  store.commit('setting/set_router_meta',
+  { 
+    keepAlive,
+    is_show_header,
+    is_show_footer,
+    title,
+  })
+  to.meta.title?(document.title = to.meta.title  as string):( document.title = '通用架子' ) 
+  next()
+})
 export default router;

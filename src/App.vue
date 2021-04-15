@@ -1,5 +1,6 @@
 <template>
   <div id="root">
+    <Loading :isLoading='getIsLoading'/>
     <NavBar v-show="getSetting.is_show_header"/>
       <RouterView>
         <template #default="{ Component, route }">
@@ -14,8 +15,9 @@
 </template>
 <script lang="ts">
 /* 组件 */
-import FooterTabbar from './components/FooterTabbar.vue'
-import NavBar from './components/NavBar.vue'
+import FooterTabbar from '@/components/FooterTabbar.vue'
+import NavBar from '@/components/NavBar.vue'
+import Loading from '@/components/Loading.vue'
 /* 工具 */
 import { defineComponent, onMounted } from 'vue';
 import { useRouter } from 'vue-router'
@@ -24,36 +26,17 @@ const { mapGetters, mapMutations } = createNamespacedHelpers('setting')
 
 export default defineComponent({
   name: 'App',
-  components: {  FooterTabbar, NavBar },
+  components: {  FooterTabbar, NavBar, Loading },
   setup(){
-    const router = useRouter();
-    const store = useStore();
     
     onMounted(() => {
-      init();
     });
-    
-    const init = () =>{
-      router.beforeEach((to, from, next) => {
-        const { keepAlive= false, is_show_header= false, is_show_footer= false, title='' } = to.meta
-        store.commit('setting/set_router_meta',
-        { 
-          keepAlive,
-          is_show_header,
-          is_show_footer,
-          title,
-        })
-         to.meta.title?(document.title = to.meta.title  as string):( document.title = '通用架子' ) 
-        next()
-      })
-    };
 
     return{
-      init
     }
   },
   computed:{
-    ...mapGetters(['getSetting'])
+    ...mapGetters(['getSetting','getIsLoading'])
   }
   
 });
