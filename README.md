@@ -13,11 +13,10 @@
 1. 常用目录别名
 2. Vant/Rem适配
 3. scss支持、_mixin.scss、_variables.scss
-4. 页面切换动画+keepAlive
-5. 页面标题
-6. 模块化自动注册：自动注册路由表/自动注册Vuex/svg图标引入
-7. axios封装、api管理
-8. 生产环境优化
+4. 页面标题
+5. 模块化自动注册：自动注册router/自动注册Vuex
+6. axios封装、api管理、请求代理
+7. 生产环境优化
 
 
 ### 常用目录别名
@@ -97,7 +96,6 @@ const router = createRouter({
 
 1. 使用br压缩代码，配置文件见 vite.config.ts
 2. 移除掉debugger/console
-3. 丑化html/css/js
 
 
 
