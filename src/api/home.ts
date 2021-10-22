@@ -1,10 +1,5 @@
-import request from '@/utils/request'
+import api from '@/utils/http'
 
-export function getInfo(params) { // 3231_login success
-  return request({
-    url: '/Ucenter/Login/info',
-    method: 'POST',
-    data: params,
-    // closeLoading: true
-  })
+export function getInfo(data) { // 3231_login success
+  return api.post("/Ucenter/Login/info", data, {type:'gateway'});
 }

@@ -1,26 +1,35 @@
 import axios from 'axios'
 import { Toast } from 'vant'
 import store from '@/store'
-import { baseUrl} from '@/config/config'
-import qs from 'qs'
+
+const apiTypes = {
+  base: import.meta.env.VITE_API,
+  gateway: import.meta.env.VITE_DEMO_API,
+}
 
 const service:any = axios.create({
-  // baseURL:'http://api.ourclass.com.cn',
-  baseURL:baseUrl(),
-  timeout: 10000, // request timeout
+  baseURL: apiTypes.base,
+  timeout: 10000,
+  responseType: "json",
+  headers: {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+  },
+  validateStatus: (status) => status === 200,
 })
+
 const loadingVex = (data:boolean) =>{
   store.commit('setting/set_isLoading',data)
 }
+
 // request interceptor 请求拦截
 service.interceptors.request.use(
   config => {
-    if(config.method === 'post'){
-      config.data = qs.stringify(config.data)
-    }
-    if(!config.closeLoading){  //api如果需要关闭loading则设置 closeLoading ，默认不关闭
-      loadingVex(true)
-    }
+    const type = config.type || 'base'
+    config.baseURL = apiTypes[type] || ''
+
+    //api如果需要关闭loading则设置 closeLoading ，默认不关闭
+    if(!config.closeLoading) loadingVex(true);
     return config
   },
   error => {

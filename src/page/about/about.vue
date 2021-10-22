@@ -30,6 +30,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .about{
-  // color: $themeColor;
+  color: $themeColor;
 }
 </style>
