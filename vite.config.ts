@@ -27,6 +27,7 @@ export default defineConfig({
   ],
   server: {
     port: 6061, // 配置启用的端口号
+    host: '0.0.0.0',
     proxy: {
       '/api': {
         target: 'http://api.ourclass.com.cn/',
