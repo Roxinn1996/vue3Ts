@@ -11,7 +11,7 @@
 import { defineComponent } from 'vue'
 import { useRouter } from 'vue-router'
 /* util 1618245334*/ 
-import { stampToDateISO } from '@/utils/dateUtil'
+import { stampToDateISO } from '@/utils/date-util'
 export default defineComponent({
   setup:()=>{
     const router = useRouter()

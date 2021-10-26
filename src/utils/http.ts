@@ -8,7 +8,7 @@ const apiTypes = {
 }
 
 const service:any = axios.create({
-  baseURL: apiTypes.base,
+  baseURL: '/',
   timeout: 10000,
   responseType: "json",
   headers: {
